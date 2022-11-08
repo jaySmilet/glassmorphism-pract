@@ -53,3 +53,9 @@ section .color:nth-child(3) {
   top: 0px;
   filter: blur(10px);
 }
+
+
+#chartdiv {
+  width: 100%;
+  height: 550px;
+}
