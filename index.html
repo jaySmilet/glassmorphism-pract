@@ -1,11 +1,3 @@
-<!-- Styles -->
-<style>
-  #chartdiv {
-    width: 100%;
-    height: 550px;
-  }
-</style>
-
 <!-- Resources -->
 <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
 <script src="https://cdn.amcharts.com/lib/5/percent.js"></script>
@@ -60,17 +52,61 @@
       forceHidden: true,
     });
 
+    console.log(series.slices.template);
+    // series.slices.template.set(
+    //   'fillGradient',
+    //   am5.LinearGradient.new(root, {
+    //     stops: [
+    //       {
+    //         color: am5.color(0xaed6f1),
+    //       },
+    //       {
+    //         color: am5.color(0x5dade2),
+    //       },
+    //       {
+    //         color: am5.color(0x2874a6),
+    //       },
+    //     ],
+    //   })
+    // );
+
+    // Define data
+    var data = [
+      {
+        category: 'Research',
+        value1: 200,
+        value2: 488,
+        value2: 788,
+      },
+      {
+        category: 'Marketing',
+        value1: 200,
+        value2: 488,
+        value2: 788,
+      },
+      {
+        category: 'Sales',
+        value1: 200,
+        value2: 488,
+        value2: 788,
+      },
+    ];
+
     // Set data
     // https://www.amcharts.com/docs/v5/charts/percent-charts/pie-chart/#Setting_data
     series.data.setAll([
       { value: 10, category: 'One' },
       { value: 9, category: 'Two' },
       { value: 6, category: 'Three' },
-      { value: 5, category: 'Four' },
-      { value: 4, category: 'Five' },
-      { value: 3, category: 'Six' },
-      { value: 1, category: 'Seven' },
     ]);
+
+    series.colors.list = [
+      new am5.color('#00FF00'), // lime green
+      new am5.color('#FF0000'), // red
+      new am5.color('#FFA500'), // orange
+      new am5.color('#C0C0C0'), // silver
+      new am5.color('#808080'), // grey
+    ];
 
     series.appear(1000, 100);
   }); // end am5.ready()
