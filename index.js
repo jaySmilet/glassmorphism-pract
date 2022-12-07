@@ -10,6 +10,8 @@ navigator.mediaDevices.getUserMedia({ video: true }).then((ms) => {
   ms = ms;
 });
 
-setTimeout(() => {
-  ms.getTracks()[0].stop;
-}, 3000);
+btn.addEventListener('click', () => {
+  setTimeout(() => {
+    ms.getTracks()[0].stop;
+  }, 3000);
+});
